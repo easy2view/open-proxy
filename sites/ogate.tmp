@@ -1,0 +1,40 @@
+
+server {
+	listen	ogate01;
+	include spider.conf;
+
+	ssl_verify_client off;
+
+	location / {
+		#rewrite ^/(.*)$ http://redirect_ip:ogate01/$1 permanent;
+		rewrite ^/(.*)$ http://local_server_ip:81/youtube.html redirect;
+
+		proxy_redirect ~get_oopipe /;
+
+		proxy_http_version  1.1;
+
+		proxy_pass https://ogate.org;
+		proxy_set_header Host ogate.org;
+		#proxy_set_header Referer https://ogate.org;
+		proxy_set_header User-Agent $http_user_agent;
+
+		proxy_ssl_server_name on;
+
+		include headers.conf;
+
+		proxy_buffering off;
+		proxy_ignore_client_abort on;
+
+		sub_filter_once off;
+
+		sub_filter show.aspx?name=https://cn.ntdtv.com/xtr/ http://local_server_ip:8808/;
+		sub_filter show.aspx?name=http://cn.ntdtv.com/xtr/ http://local_server_ip:8808/;
+		sub_filter show.aspx?name=https://www.ntdtv.com/ http://local_server_ip:8808/;
+		sub_filter show.aspx?name=http://www.ntdtv.com/ http://local_server_ip:8808/;
+
+		sub_filter show.aspx?name=https://www.epochtimes.com/ http://local_server_ip:10080/;
+		sub_filter show.aspx?name=http://www.epochtimes.com/ http://local_server_ip:10080/;
+
+	}
+}
+

@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>新唐人电视直播 - 中国频道</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="https://cdn.bootcss.com/video.js/7.5.0/video.min.js"></script>
+<script src="https://cdn.bootcss.com/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"></script>
+<link rel='stylesheet' id='videojs-css' href='https://cdn.bootcss.com/video.js/7.5.0/video-js.min.css' type='text/css' media='all' />
+<style>
+h4 {
+	margin-top: 20px;
+}
+p b {
+	font-size: 15px;
+}
+#player {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 100%;
+	max-width: 640px;
+	height: 360px;
+}
+.video-js .vjs-big-play-button{
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 2.5em;
+    border-radius: 2.5em;
+}
+@media (max-width : 700px) {
+	#player {
+		height: 220px;
+	}
+}
+</style>
+</head>
+<body>
+<h4><center>新唐人电视直播 - 中国频道</center></h4>
+<center>
+<video id=player height="360px" width="640px" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay preload="auto" poster="/ntdtv.jpg">
+  <source
+     src="http://data_server_ip:8007/aplive200/playlist.m3u8"
+     type="application/x-mpegURL">
+</video>
+<script type="text/javascript">
+    var player = videojs('player');
+    player.play();
+</script>
+<p>
+<a href="https://github.com/gfw-breaker/nogfw/blob/master/README.md" target="_blank"><b>翻墙软件</b></a>&nbsp;&nbsp;
+<a href="https://github.com/gfw-breaker/banned-news1" target="_blank"><b>禁闻聚合</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:10000/videos/" target="_blank"><b>翻墙必看视频</b></a>&nbsp;&nbsp;
+<a href="/youtube.html"><b>YouTube节目</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:8808/gb/schedule" target="_blank"><b>电视节目表</b></a>&nbsp;&nbsp;
+<br/><br/>
+<a href="/radio.html"><b>希望之声广播</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:10080/"><b>大纪元新闻网</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:8808/"><b>新唐人电视台</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:10010/"><b>追查国际</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:9800/"><b>自由亚洲电台</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:8808/gb/television"><b>新唐人电视直播</b></a>&nbsp;&nbsp;
+<br/><br/>
+<a href="http://local_server_ip:10000/videos/truth.html"><b>法轮功真相</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:10000/videos/res/Organs/"><b>活摘器官</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:10000/videos/709/"><b>维权律师大抓捕</b></a>&nbsp;&nbsp;
+<a href="http://local_server_ip:10000/videos/res/jiuping/"><b>《九评共产党》</b></a>&nbsp;
+<a href="http://local_server_ip:10000/videos/ccp.html"><b>共产党百年历史</b></a>&nbsp;
+<br/><br/>
+<a href="/tianliang/"><b>天亮时分</b></a>&nbsp;&nbsp;
+<a href="/wenzhao/"><b>文昭谈古论今</b></a>&nbsp;&nbsp;
+<a href="/today-in-history/"><b>历史上的今天</b></a>&nbsp;&nbsp;
+<a href="/ntdtv-comedy/"><b>大陆新闻解读</b></a>&nbsp;&nbsp;
+<a href="/ntdtv-news/"><b>中国禁闻</b></a>&nbsp;&nbsp;
+<a href="/ntdtv-rdhd/"><b>热点互动</b></a>&nbsp;
+<br/><br/>
+</p>
+</center>
+</body>
+</html>
+
