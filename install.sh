@@ -1,7 +1,7 @@
 #!/bin/bash
 # auth : gfw-breaker
 
-versoin=1.19.1
+version=1.19.1
 rpm -ihv http://installrepo.kaltura.org/releases/kaltura-release.noarch.rpm
 yum install -y kaltura-nginx-$version
 
