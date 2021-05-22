@@ -2,6 +2,11 @@
 # auth : gfw-breaker
 
 version=1.19.1
+
+# Disable SELinux
+setenforce 0
+sed -i  "s/enforcing/disabled/g" /etc/selinux/config
+
 rpm -ihv http://installrepo.kaltura.org/releases/kaltura-release.noarch.rpm
 yum install -y kaltura-nginx-$version
 
@@ -47,13 +52,12 @@ for f in $(ls /etc/nginx/conf.d/*.conf); do
 done
 
 
-# CentOS6
-mv /etc/init.d/kaltura-nginx /etc/init.d/nginx
-chkconfig nginx on
-
-# CentOS7
 mv /usr/lib/systemd/system/kaltura-nginx.service /usr/lib/systemd/system/nginx.service
 systemctl enable nginx
-
 service nginx restart
+
+
+cat >>  /var/spool/cron/root  << EOF
+* * * * * /root/open-proxy/scripts/watchdog.sh
+EOF
 
